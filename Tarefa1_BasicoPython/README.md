@@ -1,4 +1,4 @@
-# Tarefa 1 - Exercicios básicos Python
+# Tarefa 1 - Exercicios básicos Python 
  
 ### Exercício 1:
 Escreva um programa que exiba "Olá, mundo!" na tela.
