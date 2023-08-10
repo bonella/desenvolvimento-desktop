@@ -25,6 +25,9 @@ class Gato(Animal):
     def obter_pelagem(self):
         return self.__pelagem
 
+    def emitir_som(self):
+        return 'O gato mia.'
+
 cachorro = Cachorro('Bob', 'Canino', 'PitBull')
 print(f'Meu cachorro {cachorro.nome} é da espécie {cachorro.especie} e raça {cachorro.obter_raca()}')
 print(cachorro.emitir_som())
