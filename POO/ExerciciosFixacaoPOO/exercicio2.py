@@ -3,21 +3,21 @@ Crie uma classe chamada "Aluno" que represente um aluno em um sistema de cadastr
 O aluno deve ter os seguintes atributos: nome (string), idade (inteiro) e uma lista de disciplinas cursadas (lista de strings).
 Implemente um método para adicionar disciplinas ao aluno e um método para mostrar todas as disciplinas cursadas."""
 class Aluno:
-
-    def __init__(self, nome:str, idade:int, disciplinas_cursadas:list):
+    def __init__(self, nome:str, idade:int):
         self.nome = nome
         self.idade = idade
-        self.disciplinas_cursadas = disciplinas_cursadas
+        self.__disciplinas = []
 
-    def adicionar_disciplina_aluno(self, disciplinas:list):
-        self.disciplinas_cursadas += disciplinas
-        print(f'Disciplinas adicionadas com sucesso.')
+    def adicionar_disciplina_aluno(self, disciplina):
+        self.__disciplinas.append(disciplina)
+        print(f'Disciplina adicionada com sucesso.')
 
     def mostrar_disciplinas(self):
-        return self.disciplinas_cursadas
+        return self.__disciplinas
 
-aluno1 = Aluno('Vitoria', 24, ['POO', 'Arquitetura de rede', 'Desenvolvimento Desktop'])
-print(f'Disciplinas atuais do aluno "{aluno1.nome}": {aluno1.mostrar_disciplinas()}')
-nova_disciplina = [input('Informe a nova disciplina: ')]
-aluno1.adicionar_disciplina_aluno(nova_disciplina)
-print(f'Disciplinas atuais do aluno "{aluno1.nome}": {aluno1.mostrar_disciplinas()}')
+aluno1 = Aluno('Vitoria', 24)
+aluno1.adicionar_disciplina_aluno('Desenvolvimento Web')
+aluno1.adicionar_disciplina_aluno('LPA')
+
+print(f'Disciplinas atuais do aluno "{aluno1.nome}": {", ".join(aluno1.mostrar_disciplinas())}')
+
